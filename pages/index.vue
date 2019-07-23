@@ -10,7 +10,7 @@
             <a
               href="https://vuetifyjs.com"
               target="_blank"
-            >documentation</a>.
+            >documentations</a>.
           </p>
           <p>
             If you have questions, please join the official
