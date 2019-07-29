@@ -33,19 +33,22 @@ export const actions = {
       postcode: payload.postcode,
     };
     try {
-      ref.add(team).then(data => {
-        console.log(data);
-        const key = data.key;
-        commit('createTeam', {
-          ...team,
-          id: key,
+      fireDb
+        .collection('teams')
+        .add(team)
+        .then(function(docRef) {
+          console.log('Document written with ID: ', docRef.id);
+          const key = docRef.id;
+
+          commit('createTeam', {
+            ...team,
+            id: key,
+          });
         });
-      });
     } catch (e) {
       // TODO: error handling
       console.error(e);
     }
-    // Reach out to firebase and store it
   },
 };
 
