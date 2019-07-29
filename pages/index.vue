@@ -21,7 +21,6 @@
             <v-form id="add-division">
               <v-text-field v-model="division" label="Division" required></v-text-field>
               <v-btn @click="writeToFirestore">submit</v-btn>
-              <v-btn @click="clear">clear</v-btn>
             </v-form>
           </div>
         </v-card-text>
