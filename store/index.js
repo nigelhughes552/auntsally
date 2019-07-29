@@ -1,3 +1,4 @@
+import { fireDb } from '~/plugins/firebase.js';
 export const state = () => ({
   counter: 0,
 });

@@ -22,7 +22,7 @@
               <v-text-field v-model="contactNumber" label="Contact Number"></v-text-field>
               <v-text-field v-model="address" label="Address"></v-text-field>
               <v-text-field v-model="postcode" label="Postcode"></v-text-field>
-              <v-btn @click="addTodo">submit</v-btn>
+              <v-btn @click="addTeam">submit</v-btn>
             </v-form>
           </div>
         </v-card-text>
@@ -79,7 +79,7 @@ export default {
       }
       this.writeSuccessful = true;
     },
-    addTodo() {
+    addTeam() {
       const team = {
         teamName: this.teamName,
         contactName: this.contactName,
@@ -87,7 +87,7 @@ export default {
         address: this.address,
         postcode: this.postcode
       };
-      this.$store.commit("teams/add", team);
+      this.$store.dispatch("teams/createTeam", team);
     },
     ...mapMutations({
       toggle: "todos/toggle"
